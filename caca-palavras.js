@@ -176,7 +176,7 @@ function formatarTempo(segundos) {
 
 function carregarHistorico() {
     try {
-        const dados = JSON.parse(localStorage.getItem(CHAVE_HISTORICO) || '[]');
+        const dados = JSON.parse(sessionStorage.getItem(CHAVE_HISTORICO) || '[]');
         return Array.isArray(dados) ? dados.slice(0, 5) : [];
     } catch (erro) {
         return [];
@@ -196,7 +196,7 @@ function renderizarHistorico(historico = carregarHistorico()) {
 function salvarHistorico(partida) {
     const historico = [partida, ...carregarHistorico()].slice(0, 5);
     try {
-        localStorage.setItem(CHAVE_HISTORICO, JSON.stringify(historico));
+        sessionStorage.setItem(CHAVE_HISTORICO, JSON.stringify(historico));
     } catch (erro) {
         historicoEl.dataset.temporario = 'true';
     }
@@ -396,6 +396,10 @@ window.addEventListener('blur', encerrarArraste);
 iniciarBtn.addEventListener('click', iniciarJogo);
 novamenteBtn.addEventListener('click', iniciarJogo);
 verTabuleiroBtn.addEventListener('click', () => modal.classList.add('oculto'));
+
+try {
+    localStorage.removeItem(CHAVE_HISTORICO);
+} catch (erro) {}
 
 renderizarDicas();
 renderizarGrade();
