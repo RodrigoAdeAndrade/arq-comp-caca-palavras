@@ -4,7 +4,7 @@
 
 body {
     padding: 30px 100px 30px 100px;
-    background-color: rgb(78, 28, 0);
+    background-color: #fff0b2;
     display: flex;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     align-items: center;
     line-height: 5px;
-    color: bisque;
+    color: rgb(58, 32, 0);
 }
 
 .title h1 {
@@ -27,4 +27,29 @@ body {
 .title h2 {
     font-size: 20px;
     font-weight: 100;
+}
+
+.corpo-caca {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.card {
+    border-radius: 20px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #321d00;
+    box-shadow: 0 5px 10px rgb(0, 0, 0.3);
+    height: 500px;
+}
+
+.caca-palavra {
+    border: 1px solid #321d00;
+    border-radius: 10px;
+    background-color: #fcf7e2;
+    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 10px rgb(0, 0, 0.3);
 }
